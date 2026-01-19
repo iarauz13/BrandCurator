@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand Curator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-bg': '#F8F7F2',
+              'brand-surface': '#FFFFFF',
+              'brand-primary': '#1a1a1a',
+              'brand-secondary': '#eab3a3',
+              'brand-text-primary': '#1a1a1a',
+              'brand-text-secondary': '#6b7280',
+              'brand-border': '#E5E7EB',
+              'brand-link': '#1a1a1a',
+            },
+            fontFamily: {
+              sans: ['"Inter"', 'sans-serif'],
+              display: ['"Cormorant Garamond"', 'serif'],
+            },
+            fontSize: {
+              'small': '0.75rem',
+              'base': '1rem',
+              'large': '1.25rem',
+              'display-sm': '1.5rem',
+              'display-md': '2.25rem',
+              'display-lg': '4rem',
+            },
+            fontWeight: {
+              'normal': '400',
+              'semibold': '600',
+            },
+            lineHeight: {
+              'tight': '1.1',
+              'relaxed': '1.6',
+            },
+            spacing: {
+              'tight-sm': '0.25rem',
+              'tight-md': '0.5rem',
+              'medium-sm': '1rem',
+              'medium-lg': '1.5rem',
+              'large-sm': '3rem',
+              'large-lg': '4rem',
+              'extra-large': '8rem',
+            },
+            borderRadius: {
+              'lg': '0.75rem',
+              'xl': '1rem',
+              '2xl': '1.5rem',
+            },
+            boxShadow: {
+              'subtle': '0 4px 12px rgba(0,0,0,0.05)',
+              'subtle-hover': '0 8px 20px rgba(0,0,0,0.07)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @keyframes shimmer {
+        0% { background-position: -200% 0; }
+        100% { background-position: 200% 0; }
+      }
+      .shimmer-bg {
+        background: linear-gradient(90deg, #f3f4f6 25%, #ffffff 50%, #f3f4f6 75%);
+        background-size: 200% 100%;
+        animation: shimmer 2s infinite linear;
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 10px; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^18.3.1",
+    "react/": "https://aistudiocdn.com/react@^18.3.1/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^18.3.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.27.0",
+    "leaflet": "https://aistudiocdn.com/leaflet@^1.9.4",
+    "react-leaflet": "https://aistudiocdn.com/react-leaflet@^4.2.1",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-brand-bg text-brand-text-primary overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
